@@ -1,0 +1,494 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic)
+
+$border-color: #5d6570
+$gray-text: #999999
+$dark-gray: #313332
+$head-height: 50px
+$logo-height: 30px
+$logo-center: ($head-height - $logo-height)/2
+$picture-heigth: 160px
+$box-left-width: 40%
+$box-right-width: 100% - $box-left-width
+
+=flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+=border-top
+  border-top: 3px solid $border-color
+
+=border-bottom
+  border-bottom: 3px solid $border-color
+
+* 
+  box-sizing: border-box
+
+body
+  margin: 0
+  font-family: 'Open Sans', sans-serif
+
+.row
+  overflow: hidden
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+.container
+  max-width: 1200px
+  width: 90%
+  margin: 0 auto
+
+header
+  background-color: #313234
+  height: $head-height
+  
+  nav
+    img
+      padding: $logo-center 0
+  
+    ul
+      float: right
+      margin: 0
+      padding: 0
+      list-style-type: none
+  
+      li
+        display: inline-block
+  
+        a
+          line-height: $head-height
+          display: block
+          color: #fff
+          padding: 0 20px
+          text-decoration: none
+          text-transform: uppercase
+          &:hover
+            background: #ccc
+      
+.hero 
+  width: 100%
+  height: calc(100vh - #{$head-height})
+  background: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/SQZ1KL5EGQ.jpg") 0/cover
+  +border-top
+  +border-bottom
+
+.slogan 
+  max-width: 600px
+  margin-top: 15vh
+  background: rgba(8, 25, 35, 0.4)
+  padding: 2px 0
+  p 
+    margin: 0
+    padding-left: 20px
+    &:first-child 
+      color: white
+
+[class^='col-'] 
+  float: left
+  min-height: 1px
+
+/* ----- advantages + 3 icons  ----- */
+.advantages 
+  text-align: center
+  div[class*='col']
+    padding: 20px
+  i 
+    font-size: 60px
+  .icon-2 
+    color: #009fb7
+  .icon-1,
+  .icon-3 
+    color: #0b3335
+  p
+    color: $gray-text
+
+/* ----- featured works ------ */
+.works 
+  text-align: center
+  +border-top
+  p
+    color: $gray-text
+  h1 
+    color: $dark-gray
+
+
+/* ----- gallery ----- */
+.gallery 
+  +border-bottom
+  img 
+    width: 100%
+    height: 100%
+  i 
+    padding: 10px 10px
+    margin: 0 15px
+    background: #fff
+    border-radius: 5px
+    font-size: 1em
+    display: inline
+  .row
+    div 
+      height: $picture-heigth
+
+  .picture 
+    position: relative
+    &:hover
+      .layer
+        background: rgba(10, 10, 25, 0.5)
+      .icons
+        opacity: 1
+
+    .icons 
+      text-align: center
+      line-height: $picture-heigth
+      opacity: 0
+      transition: 0.3s ease
+
+.layer 
+  max-height: 100%
+  width: 100%
+  position: absolute
+  transition: 0.3s ease  
+
+/* ----- workers ----- */
+.workers 
+  margin-top: 50px
+
+  .person  
+    height: 200px
+    width: 200px
+    background: grey
+    border-radius: 50%
+    margin: 0 auto
+    font-size: 10em
+    +flex-center
+
+[class*="name-"] 
+  +flex-center
+  color: #1B1A20
+
+.names
+  +border-bottom
+
+/* ----- awesome title ----- */
+.awesome-title
+  height: 300px
+  background: #92929a
+  color: #fff
+  +border-bottom
+
+.box-left
+  float: left
+  height: 100%
+  width: $box-left-width
+  +flex-center
+
+  .photo
+    +flex-center
+
+    img
+      width: 400px
+      box-shadow: 4px 4px 4px $border-color
+      height: 100% 
+      border-radius: 10%
+      margin: 0 auto
+
+.box-right
+  height: 100%
+  width: $box-right-width
+  padding: 15px
+  float: right
+
+  .row .col-12
+    height: 100px
+
+  .col-4
+    font-style: italic
+    padding: 0 10px 0
+
+  h1
+    text-transform: uppercase
+    font-size: 2.5em
+    margin-top: 20px
+
+/* ----- numbers ----- */
+.numbers
+  width: 100%
+  height: 150px
+  +border-bottom
+
+  h1
+    margin-top: 25px
+    margin-bottom: 0
+    font-size: 3.5em
+
+  h4
+    margin-top: 0
+    color: #00CDE0
+    text-transform: uppercase
+
+  h1,
+  h4
+    text-align: center
+
+/* ----- footer -----*/
+.footer
+  height: 220px
+  background: $dark-gray
+  
+  .first-row
+    height: 50px
+    h2
+      color: #fff
+      text-align: left
+      margin-top: 5px
+      padding-left: 10px
+      text-transform: uppercase
+
+  .second-row
+    height: 170px
+
+    p,
+    h3,
+    .icons
+      padding: 0 10px
+      color: #fff
+      margin-top: 7px
+
+  .col-4
+    height: 100%
+
+  .col-left,
+  .col-right,
+  .row-in-row
+    height: 60px
+
+  i[class*='fa']
+    color: #fff
+    width: 40px
+    text-align: center
+    padding: 10px
+    background: #00C7E8
+    margin-left: 10px
+    &:first-child
+      margin-left: 0
+  
+/* ----- bototm ----- */
+.bottom
+  .row 
+    height: 60px
+    background: #252726
+  h4
+    color: #fff
+    text-align: center
+
+/* ----- GRID ----- */
+.col-1
+  width: 8.33%
+.col-2
+  width: 16.66%
+.col-3
+  width: 25%
+.col-4
+  width: 33.33%
+.col-5
+  width: 41.66%
+.col-6
+  width: 50%
+.col-7
+  width: 58.33%
+.col-8
+  width: 66.66%
+.col-9
+  width: 75%
+.col-10
+  width: 83.33%
+.col-11
+  width: 91.66%
+.col-12
+  width: 100%
+
+.col-offset-0
+  margin-left: 0
+.col-offset-1
+  margin-left: 8.33%
+.col-offset-2
+  margin-left: 16.66%
+.col-offset-3
+  margin-left: 25%
+.col-offset-4
+  margin-left: 33.33%
+.col-offset-5
+  margin-left: 41.66%
+.col-offset-6
+  margin-left: 50%
+.col-offset-7
+  margin-left: 58.33%
+.col-offset-8
+  margin-left: 66.66%
+.col-offset-9
+  margin-left: 75%
+.col-offset-10
+  margin-left: 83.33%
+.col-offset-11
+  margin-left: 91.66%
+  
+@media (max-width: 1120px) 
+  footer .icons [class*='fa-']
+    width: 30px
+    padding: 5px
+    margin-left: 5px
+
+@media (max-width: 1080px)
+  footer .row-in-row h3
+    font-size: 1em
+  
+@media (max-width: 1030px)
+  .awesome-title
+    .col-8,
+    .col-4
+      font-size: 0.8em
+      height: 150px
+    h1
+      font-size: 1.8em
+
+@media (max-width: 960px)
+  .box-left .photo img
+    width: 300px
+  
+@media (max-width: 920px)
+  footer .row-in-row h3
+    font-size: 0.7em
+
+@media (max-width: 890px)
+  .gallery i
+    padding: 4px 4px
+    margin: 0 5px
+    font-size: 11px
+  
+@media (max-width: 850px)
+  footer .icons [class*='fa-']
+    width: 20px
+    padding: 5px
+    margin-left: 2px
+    font-size: 10px
+
+@media (max-width: 800px)
+  .workers
+    margin-top: 25px
+    .person
+      height: 100px
+      width: 100px
+      font-size: 5em
+  .names
+    font-size: 0.6em
+  .awesome-title h1
+    font-size: 1.6em
+
+@media (max-width: 760px)
+  footer
+    h2
+      font-size: 1em
+    p
+      font-size: 0.6em
+  
+  .awesome-title
+    .col-8,
+    .col-4
+      font-size: 0.7em
+  
+  .box-left .photo img
+    width: 270px
+  
+@media (max-width: 700px)
+  .awesome-title
+    height: 500px
+  
+  .box-right,
+  .box-left
+    float: none
+    height: 50%
+    width: 100%
+  
+@media (max-width: 680px)
+  footer .row-in-row h3
+    font-size: 0.6em
+  
+@media (max-width: 650px)
+  footer .icons [class*='fa-']
+    width: 16px
+    padding: 5px
+    margin-left: 0.2px
+    font-size: 7px
+    
+@media (max-width: 550px)
+  .numbers
+    height: 100px
+    h1
+      font-size: 1em
+    h4
+      font-size: 0.8em
+  
+  footer
+    .row-in-row
+      h3
+        font-size: 0.5em
+    h2
+      font-size: 0.7em
+    p
+      font-size: 0.5em
+  
+@media (max-width: 490px)
+  .awesome-title
+    h1
+      font-size: 0.8em
+      margin-top: 40px
+    .col-8,
+    .col-4
+      font-size: 0.5em
+  
+@media (max-width: 480px)
+  footer .icons [class*='fa-']
+    width: 10px
+    padding: 3px
+    margin-left: 0.1px
+    font-size: 5px
+
+@media (max-width: 400px)
+  .workers
+    margin-top: 12px
+    .person 
+      height: 50px
+      width: 50px
+      font-size: 2.5em
+  .names
+    font-size: 0.4em
+   
+@media (max-width: 360px)
+  .awesome-title
+    h1
+      font-size: 1em
+      margin-top: 40px
+  
+  .numbers
+    h1,
+    h4
+      font-size: 0.7em
+  
+  .bottom h4
+    font-size: 0.6em
+  
+  .advantages
+    i
+      font-size: 30px
+    h4,
+    p
+      font-size: 0.7em
+  
+@media (max-width: 330px)
+  .box-left .photo img
+    width: 250px
+ 
